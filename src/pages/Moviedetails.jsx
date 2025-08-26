@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import backup from "../assets/pict.jpg";
 import {convertMinutes} from "../utils/utils";
 
@@ -72,10 +72,14 @@ console.log("Fetch URL:", url);
               </tr>
             </tbody>
           </table>
-
+          <div className="d-flex gap-3">
           <a className="btn btn-warning" target="_blank" href={`https://www.imdb.com/title/${movie.imdb_id}/`}>
           View in IMDB</a>
 
+          <Link to={`/rate/${params.id}`} className="btn btn-warning">
+  Rate Movie
+</Link>      
+          </div>
         </div>
       </div>
       
